@@ -1,4 +1,3 @@
-product = 0
 sum = 0
 
 num1 = int(input("Enter first number: "))
