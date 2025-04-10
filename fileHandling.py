@@ -34,3 +34,10 @@ with open("example.txt", "w") as file:
 # APPEND TO A FILE
 with open("output.txt", "a") as file:
     file.write("This is a new line Rift Pro Software Engineering\n")
+# FILE MODES
+"""
+    'r' - Read (default mode)
+    'w' - Write (overwrites the file)
+    'a' - Append (adds to the end of the file)
+    "r+" - Read and write (overwrites the file)
+"""
