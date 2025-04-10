@@ -19,3 +19,12 @@ Where to use:
     * Coordinates
     * Function return value
 """
+
+
+movies = ("Inception", "Interstellar", "The Dark Knight", "URI", "RRR")
+movies[1] = "SUI"  # CANT WORK BECAUSE TUPLE IS MUTABLE
+print(movies) 
+
+
+
+
