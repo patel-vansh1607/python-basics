@@ -63,3 +63,55 @@ def calculate_area(length, width):
 print(calculate_area(10,12))
 #print(area) # error "area" is not defined (it's local to the function)
 #area is local and cannot be accessed outside the function
+
+# GLOBAL VARIABLES
+"""
+= Variables decleared outside any function are global
+= They are accessible throughout the entire program, including inside functions  (unless shadowed by a local variable)
+= They can be read insde functions but modifiying them requires the global keyword
+"""
+count = 0 
+def increment();
+    global count # declare count as global to modify it
+    count += 1
+increment() 
+print(count) # 1
+
+"""
+= Without global count, trying to modify count inside the function would create a ne local variable instead, leading
+to an error or unexpected behaviour.
+"""
+
+x = 5
+def my_function();
+    x = 10
+    print("Inside Function", x)
+my_function()
+print("Outside Function", x)
+
+"""
+= The local x doesn't affect the global x
+= To modify a variable inside a function, use the global keyword.
+= For nested functions. nonlocal keyword lets you modify a variable in an outer (but not global) scope
+"""
+def outer():
+    x = "outer"
+    def inner():
+        nonlocal x
+        x = "inner"
+    inner()
+    print(x)
+outer() # output = inner
+
+
+"""
+= Local variables are confined to their function and disappear after execution
+= Global variables are accesible everywhere but should be modified carefully to avoid confusion.
+= Use global to modify global variables inside functions, use nonlocal for outer scopes variables in nested functions.
+= Avoid overusing global variables, as they can make code harder to debug and maintain, prefer using parameters and 
+passing return values
+= Use parameters to make functions reusable and return values to communicate results.
+= Be mindful of where variables are defined, use local variables for temporary data within fuction and global
+variables
+= If a variable isn't working as expected, check its scope (local vs global ) and wether its being shadowed.
+"""
